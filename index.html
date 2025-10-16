@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio | Alis Supiatul Maulidah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="hero">
+    <div class="hero-left">
+      <h1>Alis Supiatul Maulidah</h1>
+     
+      <p class="desc">
+      Siswa SMKN 1 Kawali Jurusan Rekayasa perangkat lunak yang memiliki kemampuan beradaptasi
+       baik dan berusaha meningkatkan kepercayaan diri melalui pengalaman akademis dan non-akademis.
+      </p>
+
+      <div class="btn-group">
+        <button id="profilBtn" class="btn">Lihat Profil</button>
+        <button id="eduBtn" class="btn alt">Pendidikan</button>
+        <button id="expBtn" class="btn alt2">Pengalaman</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="photo-bg"></div>
+      <img src="assets/img/WhatsApp Image 2025-10-16 at 12.01.03_9ea8ec01.jpg" alt="Foto Alis Supiatul Maulidah">
+    </div>
+  </header>
+
+  <!-- Popup PROFIL -->
+  <div id="profilPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" data-close="profilPopup">&times;</span>
+      <h2>Profil Lengkap</h2>
+      <img src="assets/img/WhatsApp Image 2025-10-16 at 12.17.05_6b356b8e.jpg" alt="Foto Profil Alis" class="popup-img">
+      <div class="popup-info">
+        <p><b>Nama Lengkap:</b> Alis Supiatul Maulidah</p>
+        <p><b>Tempat, Tanggal Lahir:</b> Ciamis, 03 April 2008</p>
+        <p><b>Email:</b> alis.supiatul31@smk.belajar.id</p>
+        <p><b>Hobi:</b>Membaca Wattpad,Traveling,Voli,Kulineran</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup PENDIDIKAN -->
+  <div id="eduPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" data-close="eduPopup">&times;</span>
+      <h2>Pendidikan</h2>
+      <div class="popup-info">
+        <p><b>SMKN 1 KAWALI</b> — Jurusan PPLG (2023 - 2026)</p>
+        <p><b>SMPN SATU ATAP 1 CIPAKU</b> (2020 - 2023)</p>
+        <p><b>SDN 1 SUKAWENING</b> (2014 - 2020)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup PENGALAMAN -->
+  <div id="expPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" data-close="expPopup">&times;</span>
+      <h2>Pengalaman</h2>
+      <div class="popup-info">
+          <p><b>Anggota PASKIBRA</b> — SMPN 1 ATAP SATU CIPAKU</p>
+           <p><b>Anggota Ekstrakurikuler Voli</b> — SMPN 1 ATAP SATU CIPAKU</p>
+        <p><b>Anggota OSIS</b> — SMKN 1 Kawali (2024-2025)</p>
+        <p><b>Ekstrakurikuler IT</b> SMKN 1 KAWALI (2024-2025)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kontak -->
+  <section id="contact" class="section">
+    <h2>Kontak</h2>
+    <form>
+      <input type="text" placeholder="Nama Kamu" required>
+      <input type="email" placeholder="Email Kamu" required>
+      <textarea placeholder="Pesan Kamu..." required></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Alis Supiatul Maulidah | Portofolio Pribadi</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const buttons = {
+      profilBtn: 'profilPopup',
+      eduBtn: 'eduPopup',
+      expBtn: 'expPopup'
+    };
+
+    Object.entries(buttons).forEach(([btnId, popupId]) => {
+      document.getElementById(btnId).addEventListener('click', () => {
+        document.getElementById(popupId).classList.add('show');
+      });
+    });
+
+    document.querySelectorAll('.close-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById(btn.dataset.close).classList.remove('show');
+      });
+    });
+
+    window.addEventListener('click', (e) => {
+      document.querySelectorAll('.popup').forEach(p => {
+        if (e.target === p) p.classList.remove('show');
+      });
+    });
+  </script>
+
+</body>
+</html>
